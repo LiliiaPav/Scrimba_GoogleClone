@@ -1,0 +1,29 @@
+body{
+    background-image: url("../img/universe.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    text-align: center;
+}
+
+h1{
+    margin: 2rem;
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+
+button{
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    background-color: white;
+    border: none;
+    font-family: inherit;
+    font-weight: 600;
+}
+span{
+    text-decoration: underline;
+}
+
+
