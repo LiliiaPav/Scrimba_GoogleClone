@@ -23,7 +23,9 @@ button{
     font-weight: 600;
 }
 span{
-    text-decoration: underline;
+    /*text-decoration: underline;*/
+    padding-bottom: 3px;
+    border-bottom: 5px solid white;
 }
 
 
