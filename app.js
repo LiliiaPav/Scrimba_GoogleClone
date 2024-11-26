@@ -181,8 +181,8 @@ class App {
             <div class="note-text">${note.text}</div>
             <div class="toolbar-container">
               <div class="toolbar">
-                <img class="toolbar-color" data-id=${note.id} src="https://icon.now.sh/palette">
-                <img class="toolbar-delete" src="https://icon.now.sh/delete">
+                <i class="fa-solid fa-palette toolbar-color"></i>
+                <i class="fa-solid fa-circle-xmark toolbar-delete"></i>
               </div>
             </div>
           </div>
@@ -194,3 +194,6 @@ class App {
   
   new App();
   
+
+
+
