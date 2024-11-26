@@ -7,7 +7,7 @@ class App{
         this.$noteTitle = document.querySelector('#note-title');
         this.$noteText = document.querySelector("#note-text");
         this.$formButtons = document.querySelector('#form-buttons');
-
+        this.$closeButton = document.querySelector('#form-close-button')
         this.addEventListeners();
     }
 
@@ -24,13 +24,24 @@ class App{
                 this.addNote({title, text})
             }
         })
+        this.$closeButton.addEventListener('click', event => {
+            event.stopPropagation();
+            this.closeForm();
+        })
     }
 
     handleFormClick(event) {
         const isFormClicked = this.$form.contains(event.target); // did user click on the form
+        const title= this.$noteTitle.value;
+        const text= this.$noteText.value;
+        const hasNote = title || text;
+        
         if (isFormClicked) {
             this.openForm(); // open form
-        } else {
+        } else if (hasNote) {
+            this.addNote({ title, text });
+        } 
+        else {
             this.closeForm();// close form
         }
       
@@ -67,12 +78,15 @@ class App{
 
         this.$notes.innerHTML = this.notes.map(note => `
             <div style="background: ${note.color};" class="note">
-              <div class="${note.title && 'note-title'}">${note.title}</div>
+              <div class="${note.title && 'note-title'}"><i class="fa-solid fa-check"></i>${note.title}</div>
               <div class="note-text">${note.text}</div>
               <div class="toolbar-container">
                 <div class="toolbar">
-                  <img class="toolbar-color" src="https://icon.now.sh/palette">
-                  <img class="toolbar-delete" src="https://icon.now.sh/delete">
+                    
+                    <img class="toolbar-color" src="https://icon.now.sh/palette">
+                    <i class="fa-solid fa-palette"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <img class="toolbar-delete" src="https://icon.now.sh/delete">
                 </div>
               </div>
             </div>
